@@ -1,4 +1,4 @@
-package com.larrymyers.logging;
+package com.larrymyers;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.net.SMTPAppender;
