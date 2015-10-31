@@ -7,11 +7,11 @@ import ch.qos.logback.core.Appender;
 import ch.qos.logback.core.Layout;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.sun.istack.internal.NotNull;
 import io.dropwizard.logging.AbstractAppenderFactory;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.time.ZoneId;
 import java.util.List;
 import java.util.TimeZone;
