@@ -24,7 +24,9 @@ Below is an example of configuring the appender to send emails via a gmail accou
           tls: true
           username: <your-gmail-or-google-apps-email>
           password: <your-account-password>
-          to: errors@my-application.com
+          to:
+            - errors@my-application.com
+            - pager_duty@my-company.org
           from: <your-gmail-or-google-apps-email>
           includeCallerData: true
 
