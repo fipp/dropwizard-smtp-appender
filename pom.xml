@@ -41,6 +41,7 @@
 
     <properties>
         <jackson.version>2.5.1</jackson.version>
+        <dropwizard.version>0.8.4</dropwizard.version>
     </properties>
 
     <build>
@@ -138,7 +139,7 @@
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-logging</artifactId>
-            <version>0.8.4</version>
+            <version>${dropwizard.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
