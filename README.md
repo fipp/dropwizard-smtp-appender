@@ -3,12 +3,17 @@
 Allows logback's [SMTPAppender](http://logback.qos.ch/manual/appenders.html#SMTPAppender) to be
 enabled and configured via a dropwizard yaml config file.
 
+## Dropwizard Version Compatibility
+
+* dropwizard 0.8.4 => dropwizard-logstash-encoder 1.0.0
+* dropwizard 0.9.0 => dropwizard-logstash-encoder 1.1.0
+
 ## Install
 
     <dependency>
         <groupId>com.larrymyers</groupId>
         <artifactId>dropwizard-smtp-appender</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     <dependency>
 
 ## Usage
