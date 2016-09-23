@@ -2,12 +2,13 @@ package com.larrymyers;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.net.SMTPAppender;
-import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.Appender;
-import ch.qos.logback.core.Layout;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.dropwizard.logging.AbstractAppenderFactory;
+import io.dropwizard.logging.async.AsyncAppenderFactory;
+import io.dropwizard.logging.filter.LevelFilterFactory;
+import io.dropwizard.logging.layout.LayoutFactory;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -39,10 +40,11 @@ public class SMTPAppenderFactory extends AbstractAppenderFactory {
     private boolean includeCallerData;
 
     @Override
-    public Appender<ILoggingEvent> build(LoggerContext context, String applicationName, Layout<ILoggingEvent> layout) {
+    public Appender build(LoggerContext context, String s, LayoutFactory layoutFactory, LevelFilterFactory levelFilterFactory, AsyncAppenderFactory asyncAppenderFactory) {
         SMTPAppender appender = new SMTPAppender();
 
-        appender.setLayout(buildLayout(context, TimeZone.getTimeZone(ZoneId.systemDefault())));
+        this.setTimeZone(TimeZone.getTimeZone(ZoneId.systemDefault()));
+        appender.setLayout(this.buildLayout(context, layoutFactory));
         appender.setContext(context);
         appender.setSMTPHost(host);
         appender.setSMTPPort(port);
