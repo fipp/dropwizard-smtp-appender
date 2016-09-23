@@ -2,6 +2,7 @@ package com.larrymyers;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.net.SMTPAppender;
+import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.Appender;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
