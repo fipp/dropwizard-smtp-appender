@@ -40,7 +40,7 @@ public class SMTPAppenderFactory extends AbstractAppenderFactory {
     private boolean includeCallerData;
 
     @Override
-    public Appender build(LoggerContext context, String s, LayoutFactory layoutFactory, LevelFilterFactory levelFilterFactory, AsyncAppenderFactory asyncAppenderFactory) {
+    public Appender<ILoggingEvent> build(LoggerContext context, String s, LayoutFactory layoutFactory, LevelFilterFactory levelFilterFactory, AsyncAppenderFactory asyncAppenderFactory) {
         SMTPAppender appender = new SMTPAppender();
 
         this.setTimeZone(TimeZone.getTimeZone(ZoneId.systemDefault()));
